@@ -1,0 +1,3 @@
+[submodule "themes/brutalist"]
+	path = themes/brutalist
+	url = https://github.com/mc-buckets/brutalist.git
