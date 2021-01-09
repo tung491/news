@@ -7,6 +7,8 @@ SITEURL = ''
 FIRST_NAME = 'Pymiers'
 SITEDESCRIPTION = 'Tin tức Python, lớp học Python của Pymi.vn'
 GITHUB = 'https://github.com/pymivn'
+STATIC_PATHS = ['images', 'extra/CNAME']
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}, }
 
 THEME = 'themes/brutalist'
 
