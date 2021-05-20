@@ -1,2 +1,3 @@
 pelican[markdown]
-typogrify
+typogrify # for the theme
+ghp-import
