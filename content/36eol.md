@@ -7,6 +7,7 @@ slug: py36eol
 authors: Pymier0
 description: Đã đến lúc học dần các tính năng mới của 3.8 và upgrade dần đi thôi 😜
 
+![img](https://images.unsplash.com/photo-1556575157-75a0d60e4835?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMzI1MzN8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjE1MzE1MTk&ixlib=rb-1.2.1&q=80&w=600)
 
 Có thể bạn đã biết, bản #python 3 ngon lành đầu tiên được dùng siêu rộng rãi là
 3.6 sẽ hết hạn (EOL) vào cuối năm nay. Đã đến lúc học dần các tính năng mới của
