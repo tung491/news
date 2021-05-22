@@ -2,7 +2,7 @@ title: Từ Python3.7 trở đi, các key trong dict có thứ tự
 date: 2021-05-21
 modified: 2021-05-21
 tags: dictorder, tip, dict
-category: features, news
+category: features
 slug: dictorder
 authors: Pymier0
 description: dict key không phải không có thứ tự (unordered) như trước
