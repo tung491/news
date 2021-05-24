@@ -13,9 +13,9 @@ Trong CPython (bản/implementation Python phổ biến nhất - tải tại pyt
 kiểu dữ liệu list thực chất là 1 array tương tự như array trong các ngôn ngữ
 lập trình khác (C/Java...).
 Nó không phải kiểu linked-list mà trong ngành khoa học máy tính thường hay
-gọi là (linkedlist) list.
+gọi là (linkedlist) list (xem link phần tham khảo).
 
-Thư viện standard `deque` cung cấp kiểu dữ liệu `double-end queue`, giống
+Thư viện standard `deque` cung cấp kiểu dữ liệu `double-ended queue`, giống
 với kiểu `double linked list`. Và thư viện `array` cung cấp kiểu dữ liệu...
 array (như list với yêu cầu các phàn tử phải cùng kiểu).
 
@@ -33,6 +33,7 @@ def tail(filename, n=10):
 - https://docs.python.org/3/faq/design.html#how-are-lists-implemented-in-cpython
 - https://docs.python.org/3/library/collections.html#collections.deque
 - https://docs.python.org/3/library/array.html
+- [https://www.geeksforgeeks.org/linked-list-vs-array/](https://www.geeksforgeeks.org/linked-list-vs-array/)
 
 Đăng ký ngay tại [PyMI.vn](https://pymi.vn) để học Python tại Hà Nội TP HCM (Sài Gòn),
 trở thành lập trình viên #python chuyên nghiệp ngay sau khóa học.
