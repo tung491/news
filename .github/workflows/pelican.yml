@@ -20,3 +20,4 @@ jobs:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         GH_PAGES_BRANCH: main
         GH_PAGES_CNAME: n.pymi.vn
+        PELICAN_CONFIG_FILE: publishconf.py
