@@ -2,7 +2,7 @@ title: Thư viện pathlib trong Python3.4
 date: 2021-05-27
 modified: 2021-05-27
 tags: features
-category: news
+category: features
 slug: pathlib
 authors: Pymier0
 description: ngắn gọn hơn, dễ dùng hơn so với os.path
