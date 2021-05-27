@@ -9,14 +9,15 @@ description: ngắn gọn hơn, dễ dùng hơn so với os.path
 
 ![img](https://images.unsplash.com/photo-1584802142766-52eda937f127?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMzI1MzN8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjIxMzAzMDQ&ixlib=rb-1.2.1&q=80&w=600)
 
-Làm thế nào để viết code mở 1 file ở ngay cùng thư muc file code hiện tại?
+Làm thế nào để viết code mở 1 file ở ngay cùng thư mục file code hiện tại?
 
 ```py
 open("./data.csv")
 ```
 
-cách này sẽ mở file cùng thư mục hiện tại (current work directory - cwd), mặc
-định là thư mục người dùng gõ lệnh để chạy Python script.
+cách này sẽ mở file cùng thư mục làm việc hiện tại (current work directory -
+cwd), mặc định là thư mục người dùng gõ lệnh để chạy Python script.
+Nếu gõ:
 
 ```py
 python script.py
@@ -41,7 +42,7 @@ f = open(
 print(f.read())
 ```
 
-bước `labspath` là cần thiết, vì `__path__` [có thể trả về đường dẫn tương đối
+bước `abspath` là cần thiết, vì `__path__` [có thể trả về đường dẫn tương đối
 (như `./script.py`).](https://stackoverflow.com/questions/7116889/is-module-file-attribute-absolute-or-relative)
 
 
