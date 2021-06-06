@@ -8,7 +8,7 @@ authors: Pymier0
 description: một lỗi rất hiển nhiên khi nhìn bằng mắt nhưng flake8, mypy, hay PyCharm đều không phát hiện ra
 
 ```py
-def n_pymi_vn():
+def n_pymi_vn() -> int:
     s = x + 1
     return s
 
@@ -41,7 +41,7 @@ Việc định nghĩa x = 10 sau `def n_pymi_vn` hoàn toàn không phải bug, 
 sau chạy OK, không có bug:
 
 ```python
-def n_pymi_vn():
+def n_pymi_vn() -> int:
     s = x + 1
     return s
 
