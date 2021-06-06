@@ -21,9 +21,23 @@ print(r)
 Đoạn code này có bug gì? tại sao các tool không phát hiện ra?
 và nên sửa thế nào để các tool có thể phát hiện ra?
 
+Xóa 3 dòng cuối đi, flake8 hay mypy sẽ phát hiện ra bug:
+
+```py
+def n_pymi_vn() -> int:
+    s = x + 1
+    return s
+
+$ flake8 main.py
+main.py:2:9: F821 undefined name 'x'
+$ mypy main.py
+main.py:2: error: Name 'x' is not defined
+Found 1 error in 1 file (checked 1 source file)
+```
+
 Chú ý câu hỏi về việc phát hiện ra bug này **trước** khi chạy code.
 
-Việc định nghĩa x = 10 sau `def n_pymi_vn` hoàn toàn không ảnh hưởng, đoạn code
+Việc định nghĩa x = 10 sau `def n_pymi_vn` hoàn toàn không phải bug, đoạn code
 sau chạy OK, không có bug:
 
 ```python
