@@ -18,8 +18,8 @@ sau là [Golang](https://pp.pymi.vn/article/go/).
 
 Ngoài điểm sáng này ra, phần còn lại của bản báo cáo có nhiều "vấn đề kỹ thuật",
 như chuyện xếp MongoDB và Redis vào nhóm SQL, nhóm chung các nghề là "lập trình
-viên" (thay vì DevOps, SysAdm, Data Analyst, hay thậm chí Scrum Master! ...).
-Hay bất ngờ lớn khi **Falcon** vượt
+viên" (thay vì DevOps, SysAdmin, Data Analyst, hay thậm chí Scrum Master! ...).
+Kèm theo bất ngờ lớn khi **Falcon** vượt
 qua **Flask** đứng vị trí thứ 2 trong các bộ "khung" (theo báo cáo)
 phổ biến nhất của Python tại Việt Nam, trong khi trên thế giới, Flask là số 1 theo
 báo cáo của [PSF & JetBrains](https://www.jetbrains.com/lp/python-developers-survey-2020/).
