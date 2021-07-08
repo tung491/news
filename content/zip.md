@@ -12,8 +12,8 @@ thay cho các công cụ chuyên biệt khác, và làm rất tốt.
 
 ![img](https://images.unsplash.com/photo-1548382340-e7280a94e3ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMzI1MzN8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjU3MDc5ODE&ixlib=rb-1.2.1&q=80&w=600)
 
-Khi máy đã cài Python, người dùng không phải lo cài `jq`, `unzip`, `gzip`,
-`curl`, ... vì Python đã có sẵn các thư viện làm những công việc này.
+Khi máy đã cài Python, người dùng không phải lo cài `unzip`, `gzip`, `tar`...
+vì Python đã có sẵn các thư viện làm những công việc này.
 Nhưng phải viết code? KHÔNG! Python có thể "chạy" các thư viện như các chương
 trình CLI.
 Cú pháp:
@@ -39,7 +39,7 @@ các chương trình CLI chuyên dụng.
 
 Giải nén tar.gz
 ```sh
-07/08/21 08:47 hvn@fml:news (develop)$ python3 -m gzip -d ~/Downloads/go1.15.7.linux-amd64.tar.gz
+$ python3 -m gzip -d ~/Downloads/go1.15.7.linux-amd64.tar.gz
 $ python3 -m tarfile -e ~/Downloads/go1.15.7.linux-amd64.tar
 $ du -csh go
 377M	go
