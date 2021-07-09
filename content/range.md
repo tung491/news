@@ -52,6 +52,9 @@ Traceback (most recent call last):
 TypeError: object of type 'generator' has no len()
 ```
 
+Bonus: đọc code tính len của range - code C:
+[https://github.com/python/cpython/blob/main/Objects/rangeobject.c#L182](https://github.com/python/cpython/blob/main/Objects/rangeobject.c#L182)
+
 ## Hết
 
 Đăng ký ngay tại [PyMI.vn](https://pymi.vn) để học Python tại Hà Nội TP HCM (Sài Gòn),
