@@ -2,8 +2,8 @@ title: Tự làm phép cộng
 date: 2021-08-25
 modified: 2021-08-25
 tags: operator, overloading, dunder
-category: news
-slug: features
+category: features
+slug: overloading
 authors: Pymier0
 description: MyClass() + MyClass() bằng gì?
 
