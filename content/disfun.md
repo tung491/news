@@ -83,6 +83,59 @@ Với function sum_two tại dòng 1, có riêng mục
 
 chú ý thêm sự khác biệt khi dùng biến trong function sử dụng `LOAD_FAST` thay vì `LOAD_NAME`, tạo biến sử dụng `STORE_FAST` thay `STORE_NAME`. function kết thúc bằng việc `RETURN_VALUE`.
 
+Thế nhưng.. return cái gì? câu `RETURN_VALUE` không thấy ghi thêm gì sau, làm 
+sao biết nó return gì?
+`RETURN_VALUE` sẽ return giá trị cuối cùng tính toán được. Như trong `sum_two`
+sẽ return giá trị của z sau khi `LOAD_FAST`. Với `lambda` function, return 
+kết quả của phép nhân `BINARY_MULTIPLY`. Cụ thể hơn, trong Python VM gọi đây là
+TOP OF STACK (TOS), kết quả của giá trị tính toán xong sẽ luôn nằm ở đây.
+Vậy nếu tôi muốn return cái không tính cuối cùng thì nó return gì?
+
+
+Thử nghiệm với 2 functio không trả về giá trị vừa tính xong:
+
+```py
+     1  def r_none(x, y):
+     2      z = x + y
+     3      return
+     4
+     5
+     6  def r_i(x, y):
+     7      i = 8
+     8      z = x + y
+     9      return i
+```
+
+Kết quả dis
+
+```py
+Disassembly of <code object r_none at 0x7fdd4b47bdf0, file "fun.py", line 1>:
+  2           0 LOAD_FAST                0 (x)
+              2 LOAD_FAST                1 (y)
+              4 BINARY_ADD
+              6 STORE_FAST               2 (z)
+
+  3           8 LOAD_CONST               0 (None)
+             10 RETURN_VALUE
+
+Disassembly of <code object r_i at 0x7fdd4b47f030, file "fun.py", line 6>:
+  7           0 LOAD_CONST               1 (8)
+              2 STORE_FAST               2 (i)
+
+  8           4 LOAD_FAST                0 (x)
+              6 LOAD_FAST                1 (y)
+              8 BINARY_ADD
+             10 STORE_FAST               3 (z)
+
+  9          12 LOAD_FAST                2 (i)
+             14 RETURN_VALUE
+```
+
+function `r_none` load giá trị None để return vì code chỉ ghi return không gì cả.
+function `r_i` sẽ `LOAD_FAST` giá trị `i` rồi return i.
+
+
+
 
 Đăng ký ngay tại [PyMI.vn](https://pymi.vn) để học Python tại Hà Nội TP HCM (Sài Gòn),
 trở thành lập trình viên #python chuyên nghiệp ngay sau khóa học.
