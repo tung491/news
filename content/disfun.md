@@ -89,10 +89,9 @@ sao biết nó return gì?
 sẽ return giá trị của z sau khi `LOAD_FAST`. Với `lambda` function, return 
 kết quả của phép nhân `BINARY_MULTIPLY`. Cụ thể hơn, trong Python VM gọi đây là
 TOP OF STACK (TOS), kết quả của giá trị tính toán xong sẽ luôn nằm ở đây.
-Vậy nếu tôi muốn return cái không tính cuối cùng thì nó return gì?
+Vậy nếu muốn return giá trị không phải là tính cuối cùng thì sao?
 
-
-Thử nghiệm với 2 functio không trả về giá trị vừa tính xong:
+Thử nghiệm với 2 function không trả về giá trị vừa tính xong:
 
 ```py
      1  def r_none(x, y):
@@ -133,9 +132,6 @@ Disassembly of <code object r_i at 0x7fdd4b47f030, file "fun.py", line 6>:
 
 function `r_none` load giá trị None để return vì code chỉ ghi return không gì cả.
 function `r_i` sẽ `LOAD_FAST` giá trị `i` rồi return i.
-
-
-
 
 Đăng ký ngay tại [PyMI.vn](https://pymi.vn) để học Python tại Hà Nội TP HCM (Sài Gòn),
 trở thành lập trình viên #python chuyên nghiệp ngay sau khóa học.
