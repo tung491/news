@@ -1,7 +1,7 @@
 title: Dùng Python để giải nén file zip, gz, tarball
 date: 2021-07-08
 modified: 2021-07-08
-tags: zip, unzip, gz, gzip, tar
+tags: zip, unzip, gz, gzip, tar, 1liner, CLI
 category: news
 slug: ziptargz
 authors: Pymier0
