@@ -1,4 +1,4 @@
-title: Speed test CPU dùng Python
+title: Speed test cpu dùng Python
 date: 2021-09-15
 modified: 2021-09-15
 tags: cpu, fast, sum, timeit, stdlib
@@ -7,7 +7,7 @@ slug: speedtest
 authors: Pymier0
 description: Test speed CPU với 43 ký tự Python CLI
 
-https://cpu.pymi.vn/ cho ta một cách để so sánh các CPU với nhau, đồng thời nắm được tốc độ của Python. Nhưng khi cần test nhanh tốc độ CPU trên máy mà ko muốn tải/code nhiều thì làm sao? 
+https://cpu.pymi.vn/ cho ta một cách để so sánh các CPU với nhau, đồng thời nắm được tốc độ của Python. Nhưng khi cần test nhanh tốc độ CPU trên máy mà ko muốn tải/code nhiều thì làm sao?
 
 Việc làm này rất hữu dụng khi test CPU của các máy ảo (cloud VM) - mặc dù ghi có 1 2 3 CPU, nhưng ko phải CPU nào cũng mạnh như nhau.
 
