@@ -1,4 +1,4 @@
-title: Speed test cpu dùng Python
+title: Test nhanh tốc độ cpu dùng Python
 date: 2021-09-15
 modified: 2021-09-15
 tags: cpu, fast, sum, timeit, stdlib, 1liner, CLI
