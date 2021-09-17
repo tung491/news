@@ -1,4 +1,4 @@
-title: chạy HTTP server bằng 1 câu lệnh Python
+title: chạy web server bằng 1 câu lệnh Python
 date: 2021-09-17
 modified: 2021-09-17
 tags: HTTP, web server, stdlib, busybox, CLI, 1liner
