@@ -14,11 +14,11 @@ Word-count là 1 bài phỏng vấn kinh điển trong ngành IT, nó không qu�
 - có thể cần viết if
 - xử lý string
 - sort (sắp xếp) kết quả bằng dict value
+- đọc file (IO)
 
 ![img](https://images.unsplash.com/photo-1598210854169-af04499e4899?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMzI1MzN8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MzIwMjY5Mzk&ixlib=rb-1.2.1&q=80&w=600)
 
-
-Nó không quá dễ/beginner như FizzBuzz, hoàn toàn có thể làm bài test "số 2" sau khi ứng viên giải bài FizzBuzz sau 5 phút, cũng không quá khó/thuật toán kiểu "leetcode.com", nên có thể dành test cho cả non-developer (như Sysadmin/devops/QA...) lẫn developer. Python giải bài này dùng dict rất đơn giản, thậm chí cực đơn giản khi có sẵn kiểu Counter:
+Nó không quá dễ/beginner như FizzBuzz, hoàn toàn có thể làm bài test "số 2" sau khi ứng viên giải bài FizzBuzz sau 5 phút, cũng không quá khó/thuật toán kiểu "leetcode.com", nên có thể dành test cho cả non-developer (như Sysadmin/devops/QA...) lẫn developer (PS: tác giả bài viết trong link cuối bài là người phỏng vấn các kỹ sư tại Canonical - công ty đứng sau Ubuntu). Python giải bài này dùng dict rất đơn giản, thậm chí cực đơn giản khi có sẵn kiểu Counter:
 
 ```py
 In [42]: from collections import Counter
