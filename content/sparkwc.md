@@ -1,4 +1,4 @@
-title: PySpark đi phỏng vấn đếm từ count word
+title: PySpark đi phỏng vấn đếm từ count words
 date: 2021-09-19
 modified: 2021-09-19
 tags: Spark, PySpark, word count, interview question
@@ -18,7 +18,7 @@ Word-count là 1 bài phỏng vấn kinh điển trong ngành IT, nó không qu�
 
 ![img](https://images.unsplash.com/photo-1598210854169-af04499e4899?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMzI1MzN8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MzIwMjY5Mzk&ixlib=rb-1.2.1&q=80&w=600)
 
-Nó không quá dễ/beginner như FizzBuzz, hoàn toàn có thể làm bài test "số 2" sau khi ứng viên giải bài FizzBuzz sau 5 phút, cũng không quá khó/thuật toán kiểu "leetcode.com", nên có thể dành test cho cả non-developer (như Sysadmin/devops/QA...) lẫn developer (PS: tác giả bài viết trong link cuối bài là người phỏng vấn các kỹ sư tại Canonical - công ty đứng sau Ubuntu). Python giải bài này dùng dict rất đơn giản, thậm chí cực đơn giản khi có sẵn kiểu Counter:
+Nó không quá dễ/beginner như [FizzBuzz](https://en.wikipedia.org/wiki/Fizz_buzz), hoàn toàn có thể làm bài test "số 2" sau khi ứng viên giải bài FizzBuzz sau 5 phút, cũng không quá khó/thuật toán kiểu "leetcode.com", nên có thể dành test cho cả non-developer (như Sysadmin/devops/QA...) lẫn developer (PS: tác giả bài viết trong link cuối bài là người phỏng vấn các kỹ sư tại Canonical - công ty đứng sau Ubuntu). Python giải bài này dùng dict rất đơn giản, thậm chí cực đơn giản khi có sẵn kiểu Counter:
 
 ```py
 In [42]: from collections import Counter
@@ -132,8 +132,7 @@ In [70]: text.select(explode(split(lower(text.value), "\s+"))).show()
 Giờ đặt lại tên cột cho hay với alias, bỏ đi các dòng empty, rồi nhóm (groupBy) các từ giống nhau lại, rồi đếm (count), sắp xếp theo từ nào có count nhiều nhất, giảm dần, lấy 10 từ top:
 
 ```py
-In [97]: text.select(explode(split(lower(text.value), "\s+")).alias("word")).filter("word != ''").groupBy("word").count().sort("count", ascending=F
-    ...: alse).show(10)
+In [97]: text.select(explode(split(lower(text.value), "\s+")).alias("word")).filter("word != ''").groupBy("word").count().sort("count", ascending=False).show(10)
 +-----+-----+                                                                   
 | word|count|
 +-----+-----+
