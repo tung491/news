@@ -1,15 +1,15 @@
 title: PySpark đi phỏng vấn đếm từ count words
 date: 2021-09-19
 modified: 2021-09-19
-tags: Spark, PySpark, word count, interview question
+tags: Spark, PySpark, count words, interview question
 category: news
 slug: sparkwc
 authors: Pymier0
 description: Dùng Python có sẵn Counter, giải bài này PySpark
 
-Word-count là 1 bài phỏng vấn kinh điển trong ngành IT, nó không quá khó/thuật toán/thách đố, mà lại rất thực tế, yêu cầu đủ các kiến thức cần có để viết code:
+"count words" là 1 bài phỏng vấn kinh điển trong ngành IT, nó không quá khó/thuật toán/thách đố, mà lại rất thực tế, yêu cầu đủ các kiến thức cần có để viết code:
 
-- dùng dictionary 
+- dùng dictionary
 - viết vòng lặp for
 - có thể cần viết if
 - xử lý string
@@ -38,7 +38,7 @@ In [48]: d = {}
 
 In [49]: for word in t.lower().split():
     ...:     d[word] = d.get(word, 0) + 1
-    ...: 
+    ...:
 
 In [55]: sorted(d.items(), key=lambda e: e[1], reverse=True)[:10]
 Out[55]: [('meo', 3), ('bo', 2), ('ga', 1)]
@@ -58,7 +58,7 @@ To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use set
 In [3]: text = spark.read.text("kjvbible.txt")
 ```
 
-File kjvbible.text nặng 4.2MB tải từ 
+File kjvbible.text nặng 4.2MB tải từ
 https://github.com/benhoyt/countwords/raw/master/kjvbible.txt
 
 Mỗi dòng sẽ được cho vào thành 1 row trong cột "value":
@@ -107,10 +107,10 @@ In [69]: text.select(split(lower(text.value), "\s+")).show(10)
 +----------------------------+
 ```
 
-Thay vì mỗi string ban đầu ở mỗi dòng, giờ ta có list (spark/Java gọi là array) các string ở mỗi dòng. Cần nối các list này lại với nhau rồi biến cái list đó thành các dòng. 
+Thay vì mỗi string ban đầu ở mỗi dòng, giờ ta có list (spark/Java gọi là array) các string ở mỗi dòng. Cần nối các list này lại với nhau rồi biến cái list đó thành các dòng.
 
 ```py
-[1,2,3] 
+[1,2,3]
 [4,5,6]
 
 => [1,2,3] + [4,5,6] == [1,2,3,4,5,6] => các dòng 1,2,3,4,5,6.
@@ -133,7 +133,7 @@ Giờ đặt lại tên cột cho hay với alias, bỏ đi các dòng empty, r�
 
 ```py
 In [97]: text.select(explode(split(lower(text.value), "\s+")).alias("word")).filter("word != ''").groupBy("word").count().sort("count", ascending=False).show(10)
-+-----+-----+                                                                   
++-----+-----+
 | word|count|
 +-----+-----+
 |  the|64015|
@@ -155,7 +155,7 @@ Kết quả trùng khớp với https://github.com/benhoyt/countwords/blob/maste
 
 Tham khảo:
 
-https://benhoyt.com/writings/count-words/
+- [https://benhoyt.com/writings/count-words/](https://benhoyt.com/writings/count-words/)
 
 Đăng ký ngay tại [PyMI.vn](https://pymi.vn) để học Python tại Hà Nội TP HCM (Sài Gòn),
 trở thành lập trình viên #python chuyên nghiệp ngay sau khóa học.
