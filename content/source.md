@@ -5,10 +5,10 @@ tags: build, source, C,
 category: news
 slug: build
 authors: Pymier0
-description: mất 5 phút, dành cho mục đích học tập và nghiên cứu... 
+description: mất 5 phút, dành cho mục đích học tập và nghiên cứu...
 
-Build phần mềm từ source dù là chuyện phổ biến trong giới mã nguồn mở từ xưa nhưng dần dần trở thành bí kíp thất 
-truyền với việc các "package manager" đều cài sẵn binary 
+Build phần mềm từ source dù là chuyện phổ biến trong giới mã nguồn mở từ xưa nhưng dần dần trở thành bí kíp thất
+truyền với việc các "package manager" đều cài sẵn binary
 (như apt, yum, ...)
 
 Tất nhiên không tiện lợi cho mục đích cài phần mềm hàng ngày, nhưng là một kiến thức tốt trong học tập và nghiên cứu.
@@ -18,11 +18,14 @@ Build (compile) CPython bản mới nhất trên Ubuntu cũng không có khó kh
 ![img](https://images.unsplash.com/photo-1570760295437-3627311f8fbe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMzI1MzN8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MzMyNzgzOTE&ixlib=rb-1.2.1&q=80&w=600)
 
 ### Chuẩn bị
-Để build cần có 4 phần mềm:
+Để thục hiện bài này, cần có 4 phần mềm:
+
 - curl để tải file source của Python
 - tar để giải nén
 - gcc có C compiler - để build
 - make để chạy lệnh build
+
+Chạy trên Ubuntu 20.04.3 LTS
 
 Cài:
 
@@ -43,7 +46,7 @@ Giải nén
 ```
 tar xf Python-3.9.7.tgz
 ```
- 
+
 Build - theo hướng dẫn trong file README.rst
 
 
@@ -61,8 +64,8 @@ Build - theo hướng dẫn trong file README.rst
 Đây chính là chương trình `python` thu được.
 
 ```
-# ./python 
-Python 3.9.7 (default, Oct  3 2021, 16:21:43) 
+# ./python
+Python 3.9.7 (default, Oct  3 2021, 16:21:43)
 [GCC 9.3.0] on linux
 ```
 
