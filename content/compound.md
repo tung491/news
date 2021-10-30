@@ -7,6 +7,8 @@ slug: compound
 authors: Pymier0
 description: 1% lãi mỗi năm, thì bao giờ tiền gửi sẽ gấp đôi?
 
+> 1% lãi mỗi năm, thì bao giờ tiền gửi sẽ gấp đôi?
+
 Câu trả lời sai dễ dàng là 100 năm, vì mỗi năm là 1%, 100 * 1 == 100.
 
 ![img](https://images.unsplash.com/photo-1579621970795-87facc2f976d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80)
@@ -14,10 +16,11 @@ Câu trả lời sai dễ dàng là 100 năm, vì mỗi năm là 1%, 100 * 1 == 
 Điều kỳ diệu ở đây là phần lãi 1% này được gộp vào để tính lãi sau năm đầu tiên.
 Năm thứ 2 lãi là 1% * (100+1), con số rất nhỏ này tăng lên rất nhanh theo thời gian.
 
-Khái niệm này phổ biến với tên "compound interest" trong tài chính, khiến 
-người giàu càng giàu hơn, người nợ ngân hàng thì ngày càng nợ nhiều hơn (hi thẻ tín dụng).
+Khái niệm này phổ biến với tên "compound interest" (lãi kép/ lãi gộp)
+trong tài chính, khiến
+người giàu càng giàu hơn, người nợ ngân hàng thì ngày càng nợ nhiều hơn (hello thẻ tín dụng).
 
-Một vòng for đơn giản đủ để thấy sự kỳ diệu này, đầu tiên là vài con số:
+Một vòng for đơn giản đủ để thấy sự kỳ diệu này, trước hết là vài con số:
 
 - tiền gửi sẽ gấp đôi sau 70 năm
 - sau 100 năm, tiền gửi đã là 270%, tức gấp 2.7 lần.
@@ -27,7 +30,7 @@ Một vòng for đơn giản đủ để thấy sự kỳ diệu này, đầu ti
 >>> for i in range(1, 101):
 ...     m = m * 1/100 + m
 ...     print(i, m)
-... 
+...
 1 101.0
 2 102.01
 3 103.0301
