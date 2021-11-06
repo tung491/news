@@ -23,9 +23,9 @@ tỷ lệ thuận với số phần tử, gọi là có độ phức tạp thu�
 Dùng timeit để đo:
 
 ```py
-$ python3 -m timeit -s 'n=10_000; L=list(range(n))' 'n in L'
+$ python3 -m timeit --setup 'n=10_000; L=list(range(n))' 'n in L'
 5000 loops, best of 5: 55.2 usec per loop
-$ python3 -m timeit -s 'n=100_000; L=list(range(n))' 'n in L'
+$ python3 -m timeit --setup 'n=100_000; L=list(range(n))' 'n in L'
 500 loops, best of 5: 569 usec per loop
 ```
 
@@ -37,9 +37,9 @@ kiếm diễn ra "tức thì", không quan tâm dict lớn đến đâu. Việc 
 độ cố định này gọi là thuật toán có độ phức tạp hằng số (constant), hay `O(1)`:
 
 ```py
-$ python3 -m timeit -s 'n = 10_000; D = {i: i**2 for i in range(n)}' 'n in D'
+$ python3 -m timeit --setup 'n = 10_000; D = {i: i**2 for i in range(n)}' 'n in D'
 20000000 loops, best of 5: 17.7 nsec per loop
-$ python3 -m timeit -s 'n = 100_000; D = {i: i**2 for i in range(n)}' 'n in D'
+$ python3 -m timeit --setup 'n = 100_000; D = {i: i**2 for i in range(n)}' 'n in D'
 20000000 loops, best of 5: 18.3 nsec per loop
 ```
 
