@@ -40,7 +40,7 @@ Out[39]: 5.510002665687352e-06
 
 Thấy `k in d.keys()` chậm bằng nửa `k in d`, đúng là chậm hơn, nhưng chỉ 1 nửa.
 Trong khi nếu là list, thì tìm kiếm phải [chậm hơn dict hàng nghìn
-lần(https://n.pymi.vn/dictvslist.html).
+lần](https://n.pymi.vn/dictvslist.html).
 
 Sự chênh lệch này hóa ra do gọi `d.keys()`
 
