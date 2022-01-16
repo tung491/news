@@ -1,13 +1,13 @@
 title: Giải "Bài toán lớp 3 có số lượng đáp án khổng lồ" bằng Z3
 date: 2022-01-16
 modified: 2022-01-16
-tags: z3, SMT, SAT, theorem prover 
+tags: Z3, SMT, SAT, theorem prover
 category: news
 slug: z3grade3
 authors: Pymier0
 description: bài toán lớp 3 truyền thuyết tốn nhiều giấy mực báo chí, giải trong 1 nốt nhạc với Z3
 
-[Bài toán lớp 3](https://www.familug.org/2015/05/codegolf-giai-bai-toan-lop-3-co-so.html): 
+[Bài toán lớp 3](https://www.familug.org/2015/05/codegolf-giai-bai-toan-lop-3-co-so.html):
 
 ![img](https://images.unsplash.com/photo-1539213492139-7b268eb93c82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMzI1MzN8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NDIzMjY0Nzg&ixlib=rb-1.2.1&q=80&w=600)
 
