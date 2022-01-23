@@ -27,7 +27,6 @@ while running:
 ```
 
 Tạo bề mặt để vẽ, là 1 object Surface, đổ nền trắng, và tính toán để tô đen các ô đan xen.
-
 Hệ màu được sử dụng là RGB (Red, Green, Blue), mỗi màu được thể hiện bằng 3 con số trong khoảng 0-255, viết bằng hệ 16 (hexadecimal) sẽ có dạng 0x00 -> 0xff.
 
 ```py
@@ -94,7 +93,7 @@ Kết quả:
 
 ![8queenpygame]({static}/images/z38queenpygame.png)
 
-full code tại [đây]({filename}/z38qgame.py)
+full code tại [đây]({static}/z38qgame.py)
 
 Đăng ký ngay tại [PyMI.vn](https://pymi.vn) để học Python tại Hà Nội TP HCM (Sài Gòn),
 trở thành lập trình viên #python chuyên nghiệp ngay sau khóa học.
