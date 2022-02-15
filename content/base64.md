@@ -260,13 +260,11 @@ Biểu diễn nhóm 24-bit đầu vào thành 4 ký tự đầu ra.
 24 bit tạo bởi 3 byte (3 * 8 == 24) đặt cạnh nhau từ trái qua phải, sau đó chia làm 4 phần 6 bits, mỗi phần đổi bit ra số rồi tra trong bảng xem ứng với ký tự nào. Do mỗi phần có 6 bit nên có khả năng biểu diễn 2**6 = 64 ký tự.
 
 ```
-
-         +--first octet--+-second octet--+--third octet--+
-         |7 6 5 4 3 2 1 0|7 6 5 4 3 2 1 0|7 6 5 4 3 2 1 0|
-         +-----------+---+-------+-------+---+-----------+
-         |5 4 3 2 1 0|5 4 3 2 1 0|5 4 3 2 1 0|5 4 3 2 1 0|
-         +--1.index--+--2.index--+--3.index--+--4.index--+
-
++--first octet--+-second octet--+--third octet--+
+|7 6 5 4 3 2 1 0|7 6 5 4 3 2 1 0|7 6 5 4 3 2 1 0|
++-----------+---+-------+-------+---+-----------+
+|5 4 3 2 1 0|5 4 3 2 1 0|5 4 3 2 1 0|5 4 3 2 1 0|
++--1.index--+--2.index--+--3.index--+--4.index--+
 ```
 
 Đầu vào luôn cần là bội của 6 bits, nên nếu thiếu ta cần thêm vào đó các bit 0
