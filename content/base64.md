@@ -257,7 +257,7 @@ Vì việc encoding sử dụng 64 ký tự (+1 ký tự = để padding).
 ## Cách encode
 Biểu diễn nhóm 24-bit đầu vào thành 4 ký tự đầu ra.
 
-24 bit tạo bởi 3 byte (3 * 8 == 24) đặt cạnh nhau từ trái qua phải, sau đó chia làm 4 phần, mỗi phần đổi bit ra số rồi tra trong bảng xem ứng với ký tự nào. Do có mỗi phần có 24/4 == 6 bit nên có khả năng biểu diễn 2**6 = 64 ký tự.
+24 bit tạo bởi 3 byte (3 * 8 == 24) đặt cạnh nhau từ trái qua phải, sau đó chia làm 4 phần 6 bits, mỗi phần đổi bit ra số rồi tra trong bảng xem ứng với ký tự nào. Do mỗi phần có 6 bit nên có khả năng biểu diễn 2**6 = 64 ký tự.
 
 ```
 
