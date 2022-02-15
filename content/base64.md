@@ -269,7 +269,9 @@ Biểu diễn nhóm 24-bit đầu vào thành 4 ký tự đầu ra.
 
 ```
 
-Đầu vào luôn cần là bội của 6 bits, nên nếu thiếu ta cần thêm vào đó các bit 0 cho đủ. Ví dụ có 4 ký tự đầu vào = 8 * 4 == 32 bits - 30 = 2 bits. 2 bits nên phải thêm 4 bit 0 vào sau cho đủ 6 bit.
+Đầu vào luôn cần là bội của 6 bits, nên nếu thiếu ta cần thêm vào đó các bit 0
+cho đủ. Ví dụ có 4 ký tự đầu vào = 8 * 4 == 32 bits - (6 bits * 5) = 2 bits. 2 bits nên
+phải thêm 4 bit 0 vào sau cho đủ 6 bit.
 
 Mỗi 24 bits đầu vào sinh ra 4 ký tự Base64, nên đầu ra nếu thiếu ký tự cần thêm các ký tự `=` cho đủ bội của 4 phục vụ việc decode - chuyển ngược lại từ Base64 thành binary.
 
