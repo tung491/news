@@ -245,7 +245,7 @@ octets in a form that requires case sensitivity but need not be
 humanly readable.**
 
 ## Tại sao lại là 64?
-Vì việc encoding sử dụng 64 ký tự (+1 ký từ = để padding).
+Vì việc encoding sử dụng 64 ký tự (+1 ký tự = để padding).
 
 64 ký tự gồm:
 
