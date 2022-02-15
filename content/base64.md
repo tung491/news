@@ -32,7 +32,7 @@ TypeError: a bytes-like object is required, not 'str'
 b'UHlNaS52bg=='
 ```
 
-một cách nhận diện dữ liệu ở dạng Base64 là gồm ký tự từ A-Z a-Z 0-9 và thường kết thúc với một vài dấu `=`.
+một cách nhận diện dữ liệu ở dạng Base64 là gồm ký tự từ A-Z a-z 0-9 và thường kết thúc với một vài dấu `=`.
 
 Nôm na thì đơn giản, chi tiết hơn sẽ có nhiều điều thú vị hay ho rất chi này nọ.
 
@@ -331,7 +331,7 @@ UHlNaS52bg==
 b'UHlNaS52bg=='
 ```
 
-## Tham khảo 
+## Tham khảo
 https://datatracker.ietf.org/doc/html/rfc3548.html
 
 Đăng ký ngay tại [PyMI.vn](https://pymi.vn) để học Python tại Hà Nội TP HCM (Sài Gòn),
