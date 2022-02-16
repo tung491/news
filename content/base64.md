@@ -280,12 +280,11 @@ Code sau code theo mô tả cách thực hiện Base64 ở trên:
 
 ```py
 import string
-b64 = {}
-for idx, c in enumerate(string.ascii_uppercase + string.ascii_lowercase + string.digits):
-    b64[idx] = c
+b64 = string.ascii_uppercase + string.ascii_lowercase + string.digits + '+/'
 
+data = 'PyMi.vn'.encode('utf-8')
 bits = []
-for c in 'PyMi.vn'.encode('utf-8'):
+for c in data:
     print(type(c), c, bin(c))
     bits.extend(bin(c)[2:].zfill(8))
 
