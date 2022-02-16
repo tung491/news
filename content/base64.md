@@ -274,7 +274,7 @@ phải thêm 4 bit 0 vào sau cho đủ 6 bit.
 Mỗi 24 bits đầu vào sinh ra 4 ký tự Base64, nên đầu ra nếu thiếu ký tự cần thêm các ký tự `=` cho đủ bội của 4 phục vụ việc decode - chuyển ngược lại từ Base64 thành binary.
 
 ## Code Python để encode Base64
-Python có sẵn thư viện `base64` với function `b64_encode` để biến bytes đầu vào thành dạng text Base64.
+Python có sẵn thư viện `base64` với function `b64encode` để biến bytes đầu vào thành dạng text Base64.
 
 Code sau code theo mô tả cách thực hiện Base64 ở trên:
 
