@@ -41,5 +41,49 @@ Chú ý function `b64encode(s, altchars=None)` nhận 1 đầu vào optional alt
 
 vậy [binascii là thư viện viết bằng C](https://github.com/python/cpython/blob/3.8/Modules/binascii.c#L570), để có được tốc độ nhanh hơn. 
 
+Tò mò xem PyPy - Python viết bằng Python thì sao:
+
+```py
+table_b2a_base64 = (
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/")
+
+@unwrap_spec(bin='bufferstr', newline=bool)
+def b2a_base64(space, bin, __kwonly__, newline=True):
+    "Base64-code line of data."
+
+    newlength = (len(bin) + 2) // 3
+    try:
+        newlength = ovfcheck(newlength * 4)
+    except OverflowError:
+        raise OperationError(space.w_MemoryError, space.w_None)
+    newlength += 1
+    res = StringBuilder(newlength)
+
+    leftchar = 0
+    leftbits = 0
+    for c in bin:
+        # Shift into our buffer, and output any 6bits ready
+        leftchar = (leftchar << 8) | ord(c)
+        leftbits += 8
+        res.append(table_b2a_base64[(leftchar >> (leftbits-6)) & 0x3f])
+        leftbits -= 6
+        if leftbits >= 6:
+            res.append(table_b2a_base64[(leftchar >> (leftbits-6)) & 0x3f])
+            leftbits -= 6
+    #
+    if leftbits == 2:
+        res.append(table_b2a_base64[(leftchar & 3) << 4])
+        res.append(PAD)
+        res.append(PAD)
+    elif leftbits == 4:
+        res.append(table_b2a_base64[(leftchar & 0xf) << 2])
+        res.append(PAD)
+    if newline:
+        res.append('\n')
+    return space.newbytes(res.build())
+```
+
+[https://foss.heptapod.net/pypy/pypy/-/blob/branch/py3.8/pypy/module/binascii/interp_base64.py#L92-124](https://foss.heptapod.net/pypy/pypy/-/blob/branch/py3.8/pypy/module/binascii/interp_base64.py#L92-124)
+
 Đăng ký ngay tại [PyMI.vn](https://pymi.vn) để học Python tại Hà Nội TP HCM (Sài Gòn),
 trở thành lập trình viên #python chuyên nghiệp ngay sau khóa học.
