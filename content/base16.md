@@ -41,7 +41,7 @@ hex của giá trị số nguyên 2022 là 7e6.
 ```
 
 Chú ý function hex chỉ nhận đầu vào là số int.
-Trong khi Base64 có thể biểu diễn mọi giá trị, ta cần dùng thư viện base64:
+Trong khi Base16 có thể biểu diễn mọi giá trị, ta cần dùng thư viện base64:
 
 ```py
 >>> base64.b16encode(b'PyMi.vn')
