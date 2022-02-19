@@ -106,7 +106,14 @@ PS: [bitcoin cũng dùng little-endian](https://learnmeabitcoin.com/technical/li
 
 Ở đây thấy chút trái ngược, vậy 2022 là E607 hay 07E6? 
 
-Cả 2 đều đúng, phụ thuộc vào việc đang sử dụng big hay little endian. int và hex dùng big endian.
+Cả 2 đều đúng, phụ thuộc vào việc đang sử dụng big hay little endian. Python int, hex và số (literal) dùng big endian.
+
+```py
+>>> 0x7e6
+2022
+>>> 0x07e6
+2022
+```
 
 ## Base
 
