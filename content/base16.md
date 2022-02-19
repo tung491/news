@@ -12,6 +12,7 @@ description: Ít khi nghe với cái tên Base16, nhưng hex thì rất phổ bi
 Bài trước giới thiệu [Base64]({filename}/base64.md) vì nó sử dụng 64 ký tự A-Za-z0-9+/ để biểu diễn binary data tùy ý.
 Ngoài Base64, trong tài liệu định nghĩa Base64 còn nhắc tới: Base16, Base32, and Base64.
 
+## Base16
 Base16 sử dụng 16 ký tự để biểu diễn binary: 0-9a-f (hoặc viết hoa 0-9A-F) hay còn có tên gọi phổ biến là hex. Mỗi 8bits (1byte) sẽ được chia làm 2 phần 4 bits, mỗi 4 bits có khả năng biểu diễn 2**4 == 16 giá trị.
 
 ```py
@@ -102,6 +103,15 @@ Thứ tự giống như việc người Việt đọc truyện tranh từ trái 
 Ta viết phần nhỏ trước, mỗi lần lấy 1 byte (== 8bits == 2 nhóm 4 bits), vậy có E6, rồi 07 => E607.
 
 PS: [bitcoin cũng dùng little-endian](https://learnmeabitcoin.com/technical/little-endian)
+
+## Base
+
+```py
+>>> help(int)
+int(x, base=10) -> integer
+```
+
+Base là hệ cơ số, hệ nhị phân là base 2, hệ bát phân (oct) là base 8, hệ thập phân (decimal) là base 10, hex là hệ base 16.
 
 Hết.
 
