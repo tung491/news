@@ -92,7 +92,7 @@ b'07E6'
 b'E607'
 ```
 
-Thứ tự giống như việc người Việt đọc truyện tranh từ trái qua phải thì người Nhật đọc từ phải qua trái, không có kiểu nào là "sai" cả. Trên máy tính cũng vậy, dùng little hay big đều không "sai". Ngày nay đa số đều dùng little-endian, tức viết phần nhỏ (little) trước mới đến phần to. Ví dụ số nguyên 1002, thì số 1 ở đây có ý nghĩa là 1000, được viết trước, rồi đến 0, 0, 2, đây là kiểu big-endian.
+Thứ tự giống như việc người Việt đọc truyện tranh từ trái qua phải thì người Nhật đọc từ phải qua trái, không có kiểu nào là "sai" cả. Trên máy tính cũng vậy, dùng little hay big đều không "sai".
 
 2022 khi viết thành dạng binary: '111-1110-0110'
 
@@ -100,9 +100,13 @@ Thứ tự giống như việc người Việt đọc truyện tranh từ trái 
 - 1110 là e
 - 0110 là 6
 
-Ta viết phần nhỏ trước, mỗi lần lấy 1 byte (== 8bits == 2 nhóm 4 bits), vậy có E6, rồi 07 => E607.
+Sử dụng little-endian, ta viết phần nhỏ trước, mỗi lần lấy 1 byte (== 8bits == 2 nhóm 4 bits), vậy có E6, rồi 07 => E607.
 
 PS: [bitcoin cũng dùng little-endian](https://learnmeabitcoin.com/technical/little-endian)
+
+Ở đây thấy chút trái ngược, vậy 2022 là E607 hay 07E6? 
+
+Cả 2 đều đúng, phụ thuộc vào việc đang sử dụng big hay little endian. int và hex dùng big endian.
 
 ## Base
 
