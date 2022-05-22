@@ -16,16 +16,17 @@ cùng lúc).
 Python (cũng như nhiều ngôn ngữ lập trình khác) từ xưa đã có hai cách làm phổ
 biến để viết concurrent code: dùng [threading](https://docs.python.org/3/library/threading.html) hoặc [multiprocessing](https://docs.python.org/3/library/multiprocessing.html).
 
-Python 3 giới thiệu 1 thư viện "bậc cao" dễ dùng hơn có tên [concurrent.futures](https://docs.python.org/3/library/concurrent.futures.html).
+Python 3 giới thiệu thư viện "bậc cao" dễ dùng hơn có tên [concurrent.futures](https://docs.python.org/3/library/concurrent.futures.html).
 
 ![img](https://images.unsplash.com/photo-1511229577011-6b24bfc30871?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600)
 
 ## CPU bound & IO bound
-"bound" ở đây hiểu theo nghĩa: chương trình tốn hầu hết thời gian thực hiện
-tính toán (CPU) hay đọc ghi dữ liệu - bao gồm cả kết nối mạng (IO).
+"bound" ở đây hiểu theo nghĩa: chương trình tốn hầu hết thời gian **thực hiện**
+tính toán (CPU) hay **chờ** (hệ điều hành) đọc ghi dữ liệu, bao gồm cả kết nối
+mạng (IO).
 
 CPython có một giới hạn về thiết kế khiến cho khi dùng threading, chỉ 1 thread
-dùng được chạy (dùng CPU) 1 lúc ([global interpreter lock](https://docs.python.org/3/glossary.html#term-global-interpreter-lock)) , muốn dùng nhiều CPU phải chuyển qua dùng multiprocessing.
+được chạy (dùng CPU) 1 lúc ([global interpreter lock](https://docs.python.org/3/glossary.html#term-global-interpreter-lock)) , muốn dùng nhiều CPU phải chuyển qua dùng multiprocessing.
 Thread nhẹ hơn process, máy tính bình thường có thể có hàng chục hay trăm ngàn
 thread nhưng
 không đủ (RAM) để tạo 10_000 process. Trong Python, khi chương trình IO bound,
@@ -36,7 +37,14 @@ concurrent.futures cho phép chuyển đổi giữa threading hay multiprocessin
 đơn giản.
 
 ## Ví dụ
-Tính tổng các số từ 1 đến 30 triệu, 4 lần. Trên máy có 8 CPU, kết qủa thấy dùng
+Tính tổng các số từ 1 đến 30 triệu, 4 lần.
+
+Việc dùng concurrent.futures chỉ gồm 2 bước:
+- tạo Thread/Process Pool Executor
+- chạy executor.map với 2 argument: function sẽ được chạy ở thread/Process, và
+list chứa argument cho mỗi lần gọi function.
+
+Trên máy có 8 CPU, kết qủa thấy dùng
 ProcessPoolExecutor cho việc tính tóan CPU bound này nhanh gấp gần 4 lần
 so với dùng ThreadPoolExecutor.
 
