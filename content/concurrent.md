@@ -24,16 +24,19 @@ Python 3 giới thiệu 1 thư viện "bậc cao" dễ dùng hơn có tên [conc
 "bound" ở đây hiểu theo nghĩa: chương trình tốn hầu hết thời gian thực hiện
 tính toán (CPU) hay đọc ghi dữ liệu - bao gồm cả kết nối mạng (IO).
 
-CPython có một giới hạn về thiết kế khiến cho khi dùng threading, chỉ1 thread
+CPython có một giới hạn về thiết kế khiến cho khi dùng threading, chỉ 1 thread
 dùng được chạy (dùng CPU) 1 lúc ([global interpreter lock](https://docs.python.org/3/glossary.html#term-global-interpreter-lock)) , muốn dùng nhiều CPU phải chuyển qua dùng multiprocessing.
-Thread nhẹ hơn process. Khi chương trình IO bound, có thể dùng thread,
-khi chương trình CPU bound thì dùng multiprocessing mới có thể tăng tốc.
+Thread nhẹ hơn process, máy tính bình thường có thể có hàng chục hay trăm ngàn
+thread nhưng
+không đủ (RAM) để tạo 10_000 process. Trong Python, khi chương trình IO bound,
+có thể dùng thread, khi chương trình CPU bound thì dùng multiprocessing mới có
+thể tăng tốc.
 
 concurrent.futures cho phép chuyển đổi giữa threading hay multiprocessing một cách
 đơn giản.
 
 ## Ví dụ
-Tính tích từ 1 đến 30 triệu, 4 lần, trên máy có 8 CPU, kết qủa thấy dùng
+Tính tổng các số từ 1 đến 30 triệu, 4 lần. Trên máy có 8 CPU, kết qủa thấy dùng
 ProcessPoolExecutor cho việc tính tóan CPU bound này nhanh gấp gần 4 lần
 so với dùng ThreadPoolExecutor.
 
@@ -66,7 +69,7 @@ for r in executor.map(sumto, [30_000_000,30_000_000,30_000_000,30_000_000]):
     print(r)
 print(time.time()-start)
 ```
-
+Kết quả
 ```
 $ python concurrent.py
 ThreadPoolExecutor: max_workers=8
