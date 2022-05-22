@@ -40,6 +40,7 @@ concurrent.futures cho phép chuyển đổi giữa threading hay multiprocessin
 Tính tổng các số từ 1 đến 30 triệu, 4 lần.
 
 Việc dùng concurrent.futures chỉ gồm 2 bước:
+
 - tạo Thread/Process Pool Executor
 - chạy executor.map với 2 argument: function sẽ được chạy ở thread/Process, và
 list chứa argument cho mỗi lần gọi function.
