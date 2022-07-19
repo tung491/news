@@ -24,22 +24,22 @@ biểu diễn ở dạng bit viết thành các số ở dạng binary: 10010101
 Trên Python, có thể viết 0b rồi gõ giá trị, ví dụ: 0b1010 là dạng binary của số 10.
 
 ```py
->>> 0b1010 == 10
+>>> 0b101010 == 42
 True
 ```
 
-Có thể biến 10 thành str (string) biểu diễn dạng binary với function bin:
+Có thể biến 42 thành str (string) biểu diễn dạng binary với function bin:
 
 ```py
->>> bin(10)
-'0b1010'
+>>> bin(42)
+'0b101010'
 ```
 
 Và biến ngược lại từ str thành số 10:
 
 ```py
->>> int('1010', base=2)
-10
+>>> int('101010', base=2)
+42
 ```
 
 ### byte
