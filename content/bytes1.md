@@ -135,7 +135,9 @@ fromhex.bytes(hex(int(b, 2))[2:])
 # b'ictf{enc0ding_is_n0t_encrypti0n_1b2e0d43}'
 ```
 
-Thấy thú zị??? tham khảo thêm các writeup của Pymi tại https://github.com/pymivn/ctf
+Thấy thú zị??? tham khảo thêm các writeup của Pymi tại [https://github.com/pymivn/ctf](https://github.com/pymivn/ctf)
+
+Tham gia team CTF PYMI qua [Slack pymi](https://pymi-invite.fly.dev/) #ctf nha
 
 Đăng ký ngay tại [PyMI.vn](https://pymi.vn) để học Python tại Hà Nội TP HCM (Sài Gòn),
 trở thành lập trình viên #python chuyên nghiệp ngay sau khóa học.
