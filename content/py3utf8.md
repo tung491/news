@@ -1,4 +1,4 @@
-title: Python3 str là unicode và rắc rối với UTF-8
+title: Python3 str là unicode và rắc rối với utf-8
 date: 2022-07-25 21:35
 modified: 2022-07-25 21:35
 tags: Unicode, UTF-8, python2, python3, str, byte, hack, hex
