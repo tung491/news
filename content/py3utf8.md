@@ -10,7 +10,7 @@ description: Một trường hợp print cho kết quả khác nhau giữa pytho
 Python3 chỉ có 1 kiểu string là `str`.
 Python2 có 2 kiểu string: `str` và `unicode`
 
-Sự hợp nhất này chính là [ưu điểm rất lớn của Python3](https://docs.python.org/3/howto/unicode.html), lập trình viên không phải đau đầu khi chuyển đổi giữa 2 kiểu string. 
+Sự hợp nhất này chính là [ưu điểm rất lớn của Python3](https://docs.python.org/3/howto/unicode.html), lập trình viên không phải đau đầu khi chuyển đổi giữa 2 kiểu string.
 
 Python3 mặc định sử dụng UTF-8, với các giá trị ASCII < 128 (bảng chữ cái tiếng Anh, các số, các dấu) được giữ nguyên kích thước là 1 byte.
 
@@ -33,15 +33,15 @@ $ python3 -c 'print("\xaa")'
 Sử dụng lệnh `hexdump` để nhìn output ở dạng hex:
 
 ```py
-$ python2 -c 'print "\xaa"' | hexdump 
-0000000 0aaa                                   
+$ python2 -c 'print "\xaa"' | hexdump
+0000000 0aaa
 0000002
- $ python3 -c 'print("\xaa")' | hexdump 
-0000000 aac2 000a                              
+ $ python3 -c 'print("\xaa")' | hexdump
+0000000 aac2 000a
 0000003
 ```
-Python2 tạo ra 2 bytes: 0a (newline xuống dòng) và aa, 
-còn Python3 tạo ra tới 4 bytes, trong đó `aa` trở thành `aac2`. Tại sao?
+Python2 tạo ra 2 bytes: `0a` (newline xuống dòng) và `aa`,
+còn Python3 tạo ra tới 3 bytes, trong đó `aa` trở thành `aac2`. Tại sao?
 
 ![img](https://images.unsplash.com/photo-1568884149074-a93f17583719?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMzI1MzN8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTg3NTQxNzY&ixlib=rb-1.2.1&q=80&w=600)
 
@@ -53,7 +53,7 @@ Lý do bởi 0xaa có giá trị 170 > 128, trên Python3 sẽ được biểu d
 - [https://docs.python.org/3/howto/unicode.html](https://docs.python.org/3/howto/unicode.html)
 
 
-Hết. 
+Hết.
 
 Đăng ký ngay tại [PyMI.vn](https://pymi.vn) để học Python tại Hà Nội TP HCM (Sài Gòn),
 trở thành lập trình viên #python chuyên nghiệp ngay sau khóa học.
