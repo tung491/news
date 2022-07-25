@@ -1,7 +1,7 @@
 title: Python3 str là unicode và rắc rối với UTF-8
 date: 2022-07-25
 modified: 2022-07-25
-tags: Unicode, UTF-8, python2, python3, str, bytes, hack, hex
+tags: Unicode, UTF-8, python2, python3, str, byte, hack, hex
 category: news
 slug: py3utf8
 authors: Pymier0
@@ -48,10 +48,17 @@ còn Python3 tạo ra tới 3 bytes, trong đó `aa` trở thành `aac2`. Tại 
 
 Lý do bởi 0xaa có giá trị 170 > 128, trên Python3 sẽ được biểu diễn bằng 2 bytes, với aa là giá trị, còn c2 là ký tự "control" để thêm vào cho đủ 2 bytes.
 
+Để in ra kết quả tương tự Python2, dùng:
+
+```py
+import sys
+sys.stdout.buffer.write(b"\xaa")
+```
+
 ## Tham khảo
 - [https://discuss.python.org/t/unusal-behavior-of-python3-print-hex-values/15418/9](https://discuss.python.org/t/unusal-behavior-of-python3-print-hex-values/15418/9)
 - [https://docs.python.org/3/howto/unicode.html](https://docs.python.org/3/howto/unicode.html)
-
+- [https://stackoverflow.com/questions/908331/how-to-write-binary-data-to-stdout-in-python-3](https://stackoverflow.com/questions/908331/how-to-write-binary-data-to-stdout-in-python-3)
 
 Hết.
 
