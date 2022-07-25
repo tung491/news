@@ -12,7 +12,7 @@ Python2 có 2 kiểu string: `str` và `unicode`
 
 Sự hợp nhất này chính là [ưu điểm rất lớn của Python3](https://docs.python.org/3/howto/unicode.html), lập trình viên không phải đau đầu khi chuyển đổi giữa 2 kiểu string. 
 
-Để đảm bảo tương thích với các hệ thống cũ, trong Python3 các giá trị ASCII < 128 (bảng chữ cái, các số, các dấu) được giữ nguyên kích thước là 1 byte.
+Python3 mặc định sử dụng UTF-8, với các giá trị ASCII < 128 (bảng chữ cái tiếng Anh, các số, các dấu) được giữ nguyên kích thước là 1 byte.
 
 - If the code point is < 128, it’s represented by the corresponding byte value.
 - If the code point is >= 128, it’s turned into a sequence of two, three, or four bytes, where each byte of the sequence is between 128 and 255.
