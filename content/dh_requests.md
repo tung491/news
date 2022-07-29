@@ -28,6 +28,14 @@ api.py       certs.py  cookies.py  help.py        __init__.py  models.py        
 ### [Dependencies](https://github.com/psf/requests/blob/v2.28.1/setup.py#L61-L65)
 requests phụ thuộc trực tiếp vào 4 thư viện, đáng kể nhất là urllib3.
 
+```py
+requires = [
+    "charset_normalizer>=2,<3",
+    "idna>=2.5,<4",
+    "urllib3>=1.21.1,<1.27",
+    "certifi>=2017.4.17",
+]
+```
 
 ### [`__init__.py`](https://github.com/psf/requests/blob/v2.28.1/requests/__init__.py)
 
@@ -52,8 +60,8 @@ def get(url, params=None, **kwargs):
 ### [sessions.py](https://github.com/psf/requests/blob/v2.28.1/requests/sessions.py#L355) - chứa class Session, trái tim của requests
 Một Session sẽ chứa đủ thông tin cần thiết như url, headers, auth, proxy, ... rồi thực hiện gọi tới HTTP adapter để thực hiện kết nối.
 
-### [adapters.py](https://github.com/psf/requests/blob/main/requests/adapters.py#L101) - nơi kết nối thực sự xảy ra
-Dù là thực hiện kết nối HTTP thì trên Python cũng có rất nhiều thư viện, từ thư viện có sẵn của Python stdlib cho tới thư viện bên ngoài và dùng mặc định cho requests: urllib3. Function [`send`](https://github.com/psf/requests/blob/main/requests/adapters.py#L436) trong adapters thực hiện kết nối với "Request" được chuẩn bị, và trả về Response. Code của send dài 150 dòng, không có gì quá phức tạp.
+### [adapters.py](https://github.com/psf/requests/blob/v2.28.1/requests/adapters.py#L101) - nơi kết nối thực sự xảy ra
+Dù là thực hiện kết nối HTTP thì trên Python cũng có rất nhiều thư viện, từ thư viện có sẵn của Python stdlib cho tới thư viện bên ngoài và dùng mặc định cho requests: urllib3. Function [`send`](https://github.com/psf/requests/blob/v2.28.1/requests/adapters.py#L436) trong adapters thực hiện kết nối với "Request" được chuẩn bị, và trả về Response. Code của send dài 150 dòng, không có gì quá phức tạp.
 
 Còn gì không? còn nhiều và bạn có thể tự khám phá, nhưng từng ấy cũng đủ vừa sâu để hiểu rõ hơn về requests, hơn hàng ngàn lập trình viên ngoài kia rồi.
 
