@@ -1,7 +1,7 @@
-title: [Deep Hacking] Chọc sâu vào thư viện dùng phổ biến nhất của Python: lib requests
+title: [Deep Reading] Chọc sâu vào thư viện dùng phổ biến nhất của Python: lib requests
 date: 2022-07-29
 modified: 2022-07-29
-tags: deep hacking, requests, code
+tags: deep reading, requests, code
 category: news
 slug: dh_requests
 authors: Pymier0
@@ -11,9 +11,9 @@ description: Đọc code Python requests cùng PyMivn
 
 Nếu 10 năm trước, khi nói bạn "học sâu", người ta nghĩ tới việc tìm hiểu thật kỹ, chọc sâu vào qua nhiều tầng lớp để nắm thật chắc kiến thức, thì sau 10 năm marketing, Deep Learning - một nhánh của AI, được dịch sang tiếng Việt với tên "học sâu", đã chiếm mất nghĩa của từ học sâu ban đầu.
 
-Vậy nên chúng tôi gọi là deep hacking, nghe cho nó đỡ lẫn.
+Vậy nên chúng tôi gọi là deep reading, nghe cho nó đỡ lẫn.
 
-Loạt bài viết deep hacking đi sâu vào các dòng code của các thư viện Python, xem chúng được viết thế nào, bí hiểm ra sao. Và lên thớt đầu tiên chính là thư viện được download nhiều số 1 của Python: requests.
+Loạt bài viết deep reading đi sâu vào các dòng code của các thư viện Python, xem chúng được viết thế nào, bí hiểm ra sao. Và lên thớt đầu tiên chính là thư viện được download nhiều số 1 của Python: requests.
 
 ## [Cấu trúc thư mục](https://github.com/psf/requests/tree/v2.28.1/requests)
 
@@ -65,7 +65,7 @@ Dù là thực hiện kết nối HTTP thì trên Python cũng có rất nhiều
 
 Còn gì không? còn nhiều và bạn có thể tự khám phá, nhưng từng ấy cũng đủ vừa sâu để hiểu rõ hơn về requests, hơn hàng ngàn lập trình viên ngoài kia rồi.
 
-Happy deeeeeep hacking.
+Happy deeeeeep reading.
 
 Hết.
 
