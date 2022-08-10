@@ -1,7 +1,7 @@
 title: Python leak var
 date: 2022-08-10
 modified: 2022-08-10
-tags: bug, variable, feature, exp
+tags: bug, fixbug, variable, feature, exp, best practice
 category: news
 slug: leakvar
 authors: Pymier0
@@ -49,16 +49,13 @@ có trước, và chỉ ảnh hưởng tới câu if số 2 nếu câu if số 1
 
 Một lỗi không luôn xảy ra, cũng không dễ dàng nhìn ra.
 
-Kết luận: best practice không phải lúc nào cũng best, dùng biến `i` hay `n` cho vòng lặp là OK.
-
-TRÁNH dùng lại tên biến.
-
-Ví dụ:
-
-```py
-students = ["Pikachu", "Doremon"]
-students = ",".join(students)
-```
+### Kết luận
+- best practice không phải lúc nào cũng best, dùng biến `i` hay `n` cho vòng lặp là OK .
+- TRÁNH dùng lại tên biến. Ví dụ:
+  ```py
+  students = ["Pikachu", "Doremon"]
+  students = ",".join(students)
+  ```
 
 Hết.
 
