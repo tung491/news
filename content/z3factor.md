@@ -1,6 +1,6 @@
 title: Dùng z3 giải hệ phương trình số lớn giải mã rsa
-date: 2022-08-10
-modified: 2022-08-10
+date: 2022-08-29
+modified: 2022-08-29
 tags: z3, factorize, CTF, RSA
 category: news
 slug: z3factor
