@@ -30,12 +30,16 @@ Phản ứng duy nhất của bạn chỉ có thể là "WTF", sau hơn 40 khóa
 Vì biến đổi từ int, sang string để in ra màn hình, khi số đủ lớn, có thể khiến hệ thống bị quá tải, dẫn tới có thể bị tấn công "DOS". Nên từ bản 3.10.7 trở đi, số có hơn **4300** chữ số sẽ không được in ra màn hình nữa, muốn in phải chỉnh qua "import sys".
 
 ```py
+>>> str(10**4300)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: Exceeds the limit (4300) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit
 >>> x = 10**4301
 >>> x // 100
 100....
 ```
 
-Tính thì vẫn tính thoải mái, nhưng mặc định không in được số lớn vậy ra màn hình.
+Tính thì vẫn tính thoải mái, nhưng mặc định không đổi thành str hay in được số lớn vậy ra màn hình.
 
 Hết.
 
