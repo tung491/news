@@ -1,4 +1,4 @@
-title: Pymi ngừng giới thiệu vscode cho học viên
+title: Pymi không khuyến khích học viên dùng vscode
 date: 2022-11-02
 modified: 2022-11-02
 tags: vscode, editor, autobug, bug
