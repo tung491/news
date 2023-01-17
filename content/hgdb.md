@@ -113,6 +113,20 @@ $1 = "Xin chao Pymier"
 
 Hết.
 
+Thực hiện trên
+
+```
+$ gdb --version
+GNU gdb (Ubuntu 9.2-0ubuntu1~20.04.1) 9.2
+Copyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+```
+
+## Tham khảo
+<https://sourceware.org/gdb/current/onlinedocs/gdb.html/Extending-GDB.html#Extending-GDB>
+
 ## Liên quan
 - <https://familug.github.io/hoc-rust-voi-gdb.html>
 - <https://pp.pymi.vn/tag/ctf/>
