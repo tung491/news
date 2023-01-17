@@ -64,7 +64,7 @@ bản mặc định trên Ubuntu 20.04 này có `--with-python` hỗ trợ Pytho
 Gõ `gdb -q` để bật gdb lên, sau đó gõ `pi` (viết tắt của python-interactive) để bật Python interpreter lên:
 
 ```
-$ gdb -q                                                                                             [0]
+$ gdb -q
 (gdb) pi
 >>> sum(i for i in range(1000) if i % 3 == 0 or i % 5 == 0)
 233168
@@ -80,7 +80,7 @@ source /home/hvn/me/hgdb/hgdb.py
 Trong file /home/hvn/me/hgdb/hgdb.py, viết code Python như thường, để tạo 1 "function" trong gdb, viết class kế thừa gdb.Function, chú ý gdb lib được import sẵn:
 
 ```py
-$ cat /home/hvn/me/hgdb/hgdb.py                                                                      [0]
+# /home/hvn/me/hgdb/hgdb.py
 print(sys.executable)
 print(sys.version)
 print("Hello world, from python")
