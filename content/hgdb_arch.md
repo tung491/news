@@ -40,7 +40,7 @@ Câu lệnh này rất dài và khó nhớ, viết một câu lệnh mới tên 
 
 ### Thêm command arch vào gdb
 Đoạn code tham khảo từ [PEDA](https://github.com/longld/peda), các bước thực hiện là chạy các câu lệnh của gdb
-rồi lấy kết quả ra và in ra phần mong muốn. Thêm vào file code `/home/hvn/me/hgdb/hgdb.py` như [bài trước]({static}/hgdb.md).
+rồi lấy kết quả ra và in ra phần mong muốn. Thêm vào file code `/home/hvn/me/hgdb/hgdb.py` như [bài trước]({filename}/hgdb.md).
 
 
 ```
@@ -99,7 +99,7 @@ There is NO WARRANTY, to the extent permitted by law.
 ## Liên quan
 - <https://familug.github.io/hoc-rust-voi-gdb.html>
 - <https://pp.pymi.vn/tag/ctf/>
-- [bài trước]({static}/hgdb.md).
+- [bài trước]({filename}/hgdb.md)
 
 Đăng ký ngay tại [PyMI.vn](https://pymi.vn) để học Python tại Hà Nội TP HCM (Sài Gòn),
 trở thành lập trình viên #python chuyên nghiệp ngay sau khóa học.
