@@ -77,24 +77,28 @@ gdb có 1 file "init" tại $HOME/.gdbinit, viết nội dung sau để gdb load
 source /home/hvn/me/hgdb/hgdb.py
 ```
 
-Trong file /home/hvn/me/hgdb/hgdb.py, viết code Python như thường, để tạo 1 "function" trong gdb, viết class kế thừa gdb.Function, chú ý gdb lib được import sẵn:
+Trong file /home/hvn/me/hgdb/hgdb.py, viết code Python như thường, để tạo 1 command mới trong gdb, viết class kế thừa gdb.Command, chú ý sys và gdb lib được import sẵn:
 
 ```py
-# /home/hvn/me/hgdb/hgdb.py
 print(sys.executable)
 print(sys.version)
 print("Hello world, from python")
 gdb.write("Hello world by gdb\n")
 
-class XinChao(gdb.Function):
+
+class HelloWorld(gdb.Command):
     def __init__(self):
-        super(XinChao, self).__init__("chao")  # ten function la chao
+        super (HelloWorld, self).__init__("hello", gdb.COMMAND_USER)
 
-    def invoke(self, name):
-        print(type(name))
-        return f"Xin chao {name.string()}"
 
-XinChao()
+    def invoke(self, arg, from_tty):
+        if arg.strip():
+            name = arg.strip()
+        else:
+            name = "World"
+        print(f"Chào, {name}!")
+
+HelloWorld()
 ```
 
 Bật gdb lên:
@@ -106,9 +110,10 @@ $ gdb -q
 [GCC 9.4.0]
 Hello world, from python
 Hello world by gdb
-(gdb) print $chao("Pymier")
-<class 'gdb.Value'>
-$1 = "Xin chao Pymier"
+(gdb) hello
+Chào, World!
+(gdb) hello Pymier
+Chào, Pymier!
 ```
 
 Hết.
