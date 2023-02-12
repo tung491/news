@@ -26,11 +26,10 @@ Lên tìm trên các trang bất động sản có thể thấy
 
 Theo [Báo cáo thị trường IT Việt Nam – Tech Hiring 2022 của Topdev.vn](https://topdev.vn/blog/muc-luong-cac-vi-tri-lap-trinh-2022/)
 
-> Mức lương Lập trình viên làm về các công nghệ thuộc nhóm High Tech bao gồm Tensor Flows, Kubernetes, Python,  lần lượt đạt mức $1,732, $1,669, $1,389. Mức lương Gross của Lập trình viên Unity hiện ở mức trung bình $1,378/tháng khi có từ 1 đến 3 năm kinh nghiệm.
-
+> Mức lương Lập trình viên làm về các công nghệ thuộc nhóm High Tech bao gồm Tensor Flows, Kubernetes, Python,  lần lượt đạt mức $1,732, $1,669, $1,389.
 > Lập trình viên Senior có mức lương dao động từ $860 đến $1.510. Các vị trí Quản lý (từ 5 năm trở lên) hoặc cấp cao hơn được khảo sát có mức lương từ $1.410 cho đến hơn $2.300.
 
-Senior tức cỡ tầm 5,7 năm kinh nghiệm, và giả sử có mức lương mơ ước là $2000 gross.
+Senior tức cỡ tầm 5,7 năm kinh nghiệm++, và giả sử có mức lương mơ ước là $2000 gross.
 
 ### Lương $2000 bao giờ có 2 tỷ mua nhà?
 $2000 tại thời điểm viết bài có giá trị 47,142,249 VND, đây là lương gross, đổi sang Net (dùng các trang web trên mạng) còn 38,879,871.
