@@ -1,4 +1,4 @@
-title: Làm IT bao giờ có 2 tỷ mua nhà?
+title: Làm it bao giờ có 2 tỷ mua nhà?
 date: 2023-02-12
 modified: 2023-02-12
 tags: question, life, salary, IT, poor, math, finance
