@@ -3,7 +3,7 @@ date: 2023-02-12
 modified: 2023-02-12
 tags: question, life, salary, IT, poor, math, finance
 category: news
-slug: 2b
+slug: 2ty
 authors: Pymier0
 description: câu hỏi nhỏ không ai muốn hỏi to
 
