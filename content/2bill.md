@@ -13,7 +13,9 @@ Bài viết tất nhiên không bàn đến các trường hợp ngoại lệ, h
 Cũng không bàn tới đi vay ngân hàng, vì vay thì cũng phải trả chứ.
 
 ### Mua nhà bao tiền
-Nhà có nhà thành phố, nhà ở quê, nhà biệt thự, nhà cấp 4, vậy nên nói mua nhà thì chung quá, nên lấy một ví dụ điển hình là mua nhà chung cư ở Hà Nội, khu vực không trung tâm, với mức giá khoảng 2 tỷ.
+![stable diffusion house]({static}/images/2ty.jpg)
+
+Nhà có nhà thành phố, nhà trên núi, nhà biệt thự, nhà cấp 4, vậy nên nói mua nhà thì chung quá, nên lấy một ví dụ điển hình là mua nhà chung cư ở Hà Nội, khu vực không trung tâm, với mức giá khoảng 2 tỷ.
 Lên tìm trên các trang bất động sản có thể thấy
 
 > Nhỉnh 2 tỷ sở hữu ngay căn hộ siêu vip tại Goldsilk Complex dt 68m2, 2 pn - 1wc. Giá: 2,35 tỷ
