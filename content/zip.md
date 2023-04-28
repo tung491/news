@@ -1,56 +1,72 @@
-title: Dùng Python để giải nén file zip, gz, tarball
-date: 2021-07-08
-modified: 2021-07-08
-tags: zip, unzip, gz, gzip, tar, 1liner, CLI
+title: zip ngắn, zip dài
+date: 2023-04-28
+modified: 2023-04-28
+tags: python, zip, itertools
 category: news
-slug: ziptargz
+slug: zip
 authors: Pymier0
-description: có Python không cần lo zip/unzip/gzip/gunzip/tar
+description: zip ngắn thì dễ zip dài thì sao?
 
-Python3 mang lại nhiều câu lệnh mới từ các module khiến Python có thể dùng
-thay cho các công cụ chuyên biệt khác, và làm rất tốt.
+zip (cái khóa kéo) là một function built-in sẵn trong Python, để có được vị trí này - ngang ngửa với len, và print, zip rõ ràng là rất quan trọng.
 
-![img](https://images.unsplash.com/photo-1548382340-e7280a94e3ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMzI1MzN8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjU3MDc5ODE&ixlib=rb-1.2.1&q=80&w=600)
+![zip](https://pixabay.com/get/g5abfdeab5cb385898885ff39db03f6f20df8e2d03a4a4933afe9f19c5c9f47be5a862afdf0e0d00fabfd1c45ce36e3c50828f18dcf0a85119e934044fc0a3309d42d89f1271d4219b3261ed73ed55ef2_640.jpg)
 
-Khi máy đã cài Python, người dùng không phải lo cài `unzip`, `gzip`, `tar`...
-vì Python đã có sẵn các thư viện làm những công việc này.
-Nhưng phải viết code? KHÔNG! Python có thể "chạy" các thư viện như các chương
-trình CLI.
-Cú pháp:
+## zip - builtin function
+
+```
+Init signature: zip(self, /, *args, **kwargs)
+Docstring:
+zip(*iterables) --> A zip object yielding tuples until an input is exhausted.
+
+   >>> list(zip('abcdefg', range(3), range(4)))
+   [('a', 0, 0), ('b', 1, 1), ('c', 2, 2)]
+
+The zip object yields n-length tuples, where n is the number of iterables
+passed as positional arguments to zip().  The i-th element in every tuple
+comes from the i-th iterable argument to zip().  This continues until the
+shortest argument is exhausted.
+```
+
+zip nhận vào 2 hay nhiều iterable (như list, string ...) và trả về lần lượt tuple chứa các phần tử thứ i của tất cả iterable.
+
+Ví dụ:
 
 ```py
-python3 -m MODULENAME INPUT
+In [3]: list(zip([1,2,3], "Python"))
+Out[3]: [(1, 'P'), (2, 'y'), (3, 't')]
 ```
 
-Ví dụ để nén/giải nén 1 file zip:
+`zip` dừng lại khi iterable ngắn nhất kết thúc.
 
-```sh
-$ python3 -m zipfile --create post.zip content/*.md
-$ file post.zip
-post.zip: Zip archive data, at least v2.0 to extract
-$ python3 -m zipfile --extract post.zip /tmp
-$ ls /tmp/*.md
-/tmp/36eol.md	   /tmp/dictorder.md  /tmp/equal.md    /tmp/hn2107.md
+Vậy làm sao tiếp tục với iterable dài, và gán giá trị mặc định cho các iterable ngắn hơn?
+
+
+### itertools.zip_longest
+
+Thư viện có sẵn `itertools` cung cấp thêm nhiều công cụ để "iterate",
+với function zip_longest, thay vì dừng lại ở iterable ngắn nhất, nó chạy tới khi iterable dài nhất kết thúc:
+
+```py
+In [4]: import itertools
+
+In [6]: list(itertools.zip_longest([1,2,3], "Python"))
+Out[6]: [(1, 'P'), (2, 'y'), (3, 't'), (None, 'h'), (None, 'o'), (None, 'n')]
 ```
 
-Sợ chậm? no no no! các thư viện này đều gọi đến thư viện viết bằng C bên dưới,
-tốc độ nhiều khi **test nhanh** còn cho kết quả nhanh hơn
-các chương trình CLI chuyên dụng.
+mặc định điền các phần tử thiếu của iterable ngắn là `None`.
 
-Giải nén tar.gz
-```sh
-$ python3 -m gzip -d ~/Downloads/go1.15.7.linux-amd64.tar.gz
-$ python3 -m tarfile -e ~/Downloads/go1.15.7.linux-amd64.tar
-$ du -csh go
-377M	go
-377M	total
+Giá trị mặc định này có thể thay đổi bằng fillvalue:
+
+```py
+In [9]: list(itertools.zip_longest([1,2,3], "Python", fillvalue=0))
+Out[9]: [(1, 'P'), (2, 'y'), (3, 't'), (0, 'h'), (0, 'o'), (0, 'n')]
 ```
 
-## Hết
-```
-$ python3 -V
-Python 3.8.10
-```
+
+### Kết luận
+Python hàng xịn, zip ngắn zip dài có đủ cả hai.
+
+Hết.
 
 Đăng ký ngay tại [PyMI.vn](https://pymi.vn) để học Python tại Hà Nội TP HCM (Sài Gòn),
 trở thành lập trình viên #python chuyên nghiệp ngay sau khóa học.
