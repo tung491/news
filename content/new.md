@@ -12,7 +12,7 @@ description: lại một câu hỏi phỏng vấn chán ngắc
 Photo by <a href="https://unsplash.com/@jannerboy62?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nick Fewings</a> on <a href="https://unsplash.com/photos/1SsUquHPNT8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 </center>
 
-### __new__ và __init__ khác gì?
+### `__new__` và `__init__` khác gì?
 Như đa phần các câu hỏi phỏng vấn nặng tính lý thuyết, ít ứng dụng thực tế hay trăm năm dùng 1 lần, đây không là ngoại lệ.
 
 Các câu khác tương tự:
@@ -20,7 +20,7 @@ Các câu khác tương tự:
 - decorator là gì (**CHƯA** bao giờ thấy ai hỏi generator dù generator dùng nhiều gấp decorator trăm lần).
 - GIL là gì, thread với process khác gì nhau, nhược điểm của thread trong Python. (Không thực sự vô dụng, nhưng hiếm dùng với web-developer) Xem câu trả lời ở <https://docs.python.org/3/library/threading.html>
 
-### Python __init__
+### Python `__init__`
 `__init__` thì ai viết class cũng dùng, method `__init__` dùng để khởi tạo một object (class instance), ví dụ:
 
 ```py
@@ -31,8 +31,8 @@ class Cat():
         self.age = age
 ```
 
-### Python __new__ có hay dùng không?
-`__new__` rất ít khi thấy, và rất ít được dùng. Thử tìm trong 3 web framework phổ biến nhất của Python: Django, Flask, FastAPI, thấy:
+### Python `__new__` có hay dùng không?
+`__new__` rất ít khi thấy, vì rất ít được dùng. Thử tìm trong 3 web framework phổ biến nhất của Python: Django, Flask, FastAPI, thấy:
 
 ```py
 $ grep -Rin 'def __new__' django
@@ -70,7 +70,7 @@ def __new__(cls, *args: t.Any, **kwargs: t.Any) -> BaseURL:
     return super().__new__(cls, *args, **kwargs)
 ```
 
-> __new__() is intended mainly to allow subclasses of immutable types (like int, str, or tuple) to customize instance creation. It is also commonly overridden in custom metaclasses in order to customize class creation.
+> `__new__()` is intended mainly to allow subclasses of immutable types (like int, str, or tuple) to customize instance creation. It is also commonly overridden in custom metaclasses in order to customize class creation.
 
 Django subclass str:
 
@@ -89,7 +89,7 @@ class SettingsReference(str):
         self.setting_name = setting_name
 ```
 
-### Python __new__ là gì
+### Python `__new__` là gì
 `__new__` là một staticmethod (là một trường hợp đặc biệt, nên không cần @staticmethod), dùng để tạo 1 instance của class (tạo object). Sau khi tạo ra object rồi, object gọi `__init__` để "initialize" (khởi tạo các giá trị).
 
 ```py
