@@ -125,7 +125,11 @@ không có lần gọi nào tới method `counter.items()`.
 >     Do something with k and v here...
 > {% endfor %}
 >
-> Because dictionary lookup happens first, that behavior kicks in and provides a default value instead of using the intended .items() method. In this case, consider converting to a dictionary firs
+> Because dictionary lookup happens first, that behavior kicks in and provides a default value instead of using the intended .items() method. In this case, consider converting to a dictionary first
+
+Giải pháp là biến Counter thành dict `dict(c)` trước khi đưa cho template.
+
+Thành dict là xong??? cho đến 1 ngày đen đủi, khi dict của bạn chứa 1 key là `items`...
 
 Xem code tại <https://github.com/django/django/blob/4.2/django/template/base.py#L867-L942>
 
