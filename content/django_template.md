@@ -111,6 +111,7 @@ May mắn thay, tìm `items()` trong tài liệu [reference](https://docs.django
 > If the resulting value is callable, it is called with no arguments. The result of the call becomes the template value.
 
 Cũng giống phần đã viết trong [topic](https://docs.djangoproject.com/en/4.2/topics/templates/#variables), nhưng nhấn mạnh hơn về thứ tự thử:
+
 - tìm kiếm trong dict trước: `object[key]`
 - truy cập attribute, method cũng là 1 loại attribute: `object.key`
 
