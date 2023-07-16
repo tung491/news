@@ -97,8 +97,8 @@ TypeError at /
 'int' object is not iterable
 ```
 
-có nghĩa `counter.items` ở đây là một `int` chứ không phải 1 tuple như `dict.items` vẫn trả về.
-Khó hiểu hơn nữa, khi phần code tương tự trong function `index` vẫn chạy bình thường, tại sao `counter.items` trong Django template trả về 0?
+có nghĩa `counter.items` trả về một `int` chứ không phải tuple (key, value) như `dict.items` vẫn trả về.
+Khó hiểu hơn nữa, khi phần code tương tự trong function `index` vẫn chạy bình thường, tại sao `counter.items` trong Django template trả về int?
 
 May mắn thay, tìm `items()` trong tài liệu [reference](https://docs.djangoproject.com/en/4.2/ref/templates/language/) của Django Template viết:
 
