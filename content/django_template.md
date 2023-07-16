@@ -126,6 +126,8 @@ không có lần gọi nào tới method `counter.items()`.
 >
 > Because dictionary lookup happens first, that behavior kicks in and provides a default value instead of using the intended .items() method. In this case, consider converting to a dictionary firs
 
+Xem code tại <https://github.com/django/django/blob/4.2/django/template/base.py#L867-L942>
+
 ### Kết luận
 Magic không tự xảy ra, muốn dùng magic nhớ đọc doc, hãy thử, đừng đoán.
 
