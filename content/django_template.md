@@ -1,11 +1,11 @@
-title: Django template gọi method không cần `()`
+title: Django template gọi method không cần ()
 date: 2023-07-16
 modified: 2023-07-16
 tags: python, dict, Django, template, Jinja2
 category: news
 slug: django-template
 authors: Pymier0
-description: Flask Jinja2 template gọi method cần `()`, Django thì không
+description: Flask Jinja2 template gọi method cần (), Django thì không
 
 Python có 2 template engine phổ biến nhất: Jinja2 (hay dùng với Flask, SaltStack, Ansible...) và Django template.
 
