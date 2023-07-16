@@ -1,7 +1,7 @@
 title: Django template gọi method không cần ()
 date: 2023-07-16
 modified: 2023-07-16
-tags: python, dict, Django, template, Jinja2
+tags: python, Django, template, Jinja2
 category: news
 slug: django-template
 authors: Pymier0
