@@ -1,75 +1,146 @@
-title: dataclass trong Python3.7
-date: 2021-05-22
-modified: 2021-05-22
-tags: features, dataclass
-category: features
-slug: dataclass
+title: Lộ mật khẩu cùng dataclass
+date: 2023-08-30
+modified: 2023-08-30
+tags: python, dataclass, security, str, repr
+category: news
+slug: dataclass-leak
 authors: Pymier0
-description: viết class ngắn gọn hơn, đủ tiện để thay dict/tuple chứa dữ liệu.
+description: mới, xịn, tiện, lợi, hại
 
-![img](https://images.unsplash.com/flagged/photo-1587096472434-8b65b343980d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMzI1MzN8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjE2NTM1NTg&ixlib=rb-1.2.1&q=80&w=600)
+`dataclasses` module là 1 standard library rất mới, xuất hiện ở Python 3.7, với tác dụng:
 
-Python3.7 trở đi có thêm 1 thư viện mới: `dataclasses`, thư viện này cho phép
-tạo 1 data class (class với mục đích chính để biểu diễn/chứa dữ liệu,
-thường không định nghĩa method)
-với cú pháp ngắn gọn, kết hợp với cú pháp type annotation:
+> This module provides a decorator and functions for automatically adding generated special methods such as `__init__()` and `__repr__()` to user-defined classes.
+
+<https://peps.python.org/pep-0557/>
+
+đây là một tính năng được yêu thích ở các bản Python mới (3.7+).
+
+### dataclass giúp viết class ngắn hơn, không phải tự gõ `__init__`
+`dataclass` là một decorator, dùng trên đầu class:
 
 ```py
-import dataclasses as dc
-from typing import List
+from dataclasses import dataclass
 
-
-@dc.dataclass
+@dataclass
 class User:
     name: str
-    languages: List[str]
-    age: int = 20
+    age: int
+    email: str
 
-
-p1 = User("Pymier1", ["Python", "SQL"])
-print(p1)
+u = User("Pymier", 8, "hvn@pymi.vn")
+print(u)
+# User(name='Pymier', age=8, email='hvn@pymi.vn')
 ```
 
-output
-
-```sh
-User(name='Pymier1', languages=['Python', 'SQL'], age=20)
-```
-
-Chú ý: từ Python3.9 trở đi, có thể viết `list[str]` mà không cần import typing.
-
-code này tương đương với code sau ở Python các bản trước 3.7:
+Tiện vậy có gì mà không tốt?
+### dataclass luôn in ra mọi attribute
+Mặc định, khi print một object tạo bởi class dùng dataclass, nó sẽ in ra mọi attribute.
+Giải sử một ngày, cần chứa mật khẩu trong class User, đoạn code trở thành:
 
 ```py
+@dataclass
 class User:
-    def __init__(self, name, languages, age=20):
-        self.name = name
-        self.languages = languages
-        self.age = age
+    name: str
+    age: int
+    email: str
+    password: str
 
-    def __str__(self):
-        return f"User(name='{self.name}', languages={self.languages}, age={self.age})"
-
-    # ... và nhiều nữa https://stackoverflow.com/a/47955313/807703
-p1 = User("Pymier1", ["Python", "Vietnames"])
-print(p1)
+u = User("Pymier", 8, "hvn@pymi.vn", "hunter42")
+print(u)
+# User(name='Pymier', age=8, email='hvn@pymi.vn', password='hunter42')
 ```
 
-Để biến 1 dataclass thành dict, chỉ cần dùng function `asdict`:
+Vậy là nhờ dùng dataclass, ta VÔ TÌNH để lộ mật khẩu, in ra màn hình, render ra website hay theo log file lộ ra ngoài...
+
+#### Sửa lại thế nào?
+muốn print object ra gì, rõ là phải sửa `__str__`!, thêm method `__str__` vào
 
 ```py
-... print(dc.asdict(p1))
-{'name': 'Pymier1', 'languages': ['Python', 'Vietnames'], 'age': 20}
+    ...
+    def __str__(self) -> str:
+        return f"{self.name=} {self.age=} {self.email=}"
+
+u = User("Pymier", 8, "hvn@pymi.vn", "hunter42")
+print(u)
+# self.name='Pymier' self.age=8 self.email='hvn@pymi.vn'
+```
+Kết quả giờ không còn hiện ra password nữa, ta lặng lẽ ỉm đi cái security bug này và không ai biết tới, thật tuyệt vời!
+
+Xong chưa? nên dừng lại 1 chút rồi hãy đọc tiếp.
+
+Bài học ở đây rút ra rằng: những tính năng tiện lợi, mặc định, không phải để ta **bỏ qua** (và không biết) chúng, mà vẫn luôn cần để ý tới. Explicit is better than implicit?
+
+### Tạo 1 class mới chứa dataclass này
+Tạo 1 team class dùng dataclass, và in ra:
+
+```py
+@dataclass
+class Team:
+    members: list[User]
+
+t = Team(members=[u])
+print(t)
+# Team(members=[User(name='Pymier', age=8, email='hvn@pymi.vn', password='hunter42')])
+```
+dù ta đã viết `__str__` cho `User`, nhưng khi in ra `Team` object, nó sử dụng `__repr__` chứ không dùng `__str__`, như dòng đầu tiên trong tài liệu của `dataclasses` đã viết:
+
+>  automatically adding generated special methods such as `__init__()` **and** `__repr__()` to user-defined classes
+
+Cách fix: thêm `__repr__`:
+
+> If a class defines `__repr__()` but not `__str__()`, then `__repr__()` is also used when an “informal” string representation of instances of that class is required.
+
+```py
+from dataclasses import dataclass
+
+@dataclass
+class User:
+    name: str
+    age: int
+    email: str
+    password: str
+    def __repr__(self) -> str:
+        return f"{self.name=} {self.age=} {self.email=}"
+
+u = User("Pymier", 8, "hvn@pymi.vn", "hunter42")
+print(u)
+# self.name='Pymier' self.age=8 self.email='hvn@pymi.vn'
+@dataclass
+class Team:
+    members: list[User]
+
+t = Team(members=[u])
+print(t)
+# Team(members=[self.name='Pymier' self.age=8 self.email='hvn@pymi.vn'])
 ```
 
-Để class trở nên "immutable", gọi dataclass với argument `frozen=True`
-https://docs.python.org/3.8/library/dataclasses.html#frozen-instances
+Bạn đọc tham khảo sự khác biệt giữa `__str__` và `__repr__`: <https://stackoverflow.com/questions/1436703/what-is-the-difference-between-str-and-repr>
 
-dataclass thích hợp để thay cho namedtuple, tuple hay các class chỉ để chứa
-dữ liệu, hay dictionary hoạt động như 1 container chứa dữ liệu.
+Bất ngờ thay, mấy ông già không "cool" không "trend" không dùng `dataclass` không gặp phải vấn đề này:
 
-### Tham khảo:
-- https://www.python.org/dev/peps/pep-0557/#why-not-just-use-namedtuple
+```py
+from dataclasses import dataclass
+
+class User:
+    def __init__(self, name: str, age: int, email: str, password: str):
+        self.name = name
+        self.age = age
+        self.email = email
+        self.password = password
+
+u = User("Pymier", 8, "hvn@pymi.vn", "hunter42")
+print(u, repr(u))
+# <__main__.User object at 0x7f9efd510410> <__main__.User object at 0x7f9efd510410>
+```
+
+### Tham khảo
+<https://docs.python.org/3.11/library/dataclasses.html>
+
+### Kết luận
+`dataclasses` tiện lợi, giúp viết ít code hơn, nhưng cần biết những gì nó "tự động" để tránh bất ngờ.
+Default không có nghĩa là không biết.
+
+Hết.
 
 Đăng ký ngay tại [PyMI.vn](https://pymi.vn) để học Python tại Hà Nội TP HCM (Sài Gòn),
 trở thành lập trình viên #python chuyên nghiệp ngay sau khóa học.
