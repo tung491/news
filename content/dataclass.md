@@ -136,6 +136,8 @@ print(u, repr(u))
 ### Tham khảo
 <https://docs.python.org/3.11/library/dataclasses.html>
 
+Xem list các method được dataclass autogenerate tại <https://peps.python.org/pep-0557/#abstract>
+
 ### Kết luận
 `dataclasses` tiện lợi, giúp viết ít code hơn, nhưng cần biết những gì nó "tự động" để tránh bất ngờ.
 Default không có nghĩa là không biết.
