@@ -35,7 +35,7 @@ print(u)
 Tiện vậy có gì mà không tốt?
 ### dataclass luôn in ra mọi attribute
 Mặc định, khi print một object tạo bởi class dùng dataclass, nó sẽ in ra mọi attribute.
-Giải sử một ngày, cần chứa mật khẩu trong class User, đoạn code trở thành:
+Giả sử một ngày, cần chứa mật khẩu trong class User, đoạn code trở thành:
 
 ```py
 @dataclass
@@ -66,9 +66,10 @@ print(u)
 ```
 Kết quả giờ không còn hiện ra password nữa, ta lặng lẽ ỉm đi cái security bug này và không ai biết tới, thật tuyệt vời!
 
-Xong chưa? nên dừng lại 1 chút rồi hãy đọc tiếp.
+Xong chưa? nên dừng lại 1 chút suy nghĩ rồi hãy đọc tiếp.
 
-Bài học ở đây rút ra rằng: những tính năng tiện lợi, mặc định, không phải để ta **bỏ qua** (và không biết) chúng, mà vẫn luôn cần để ý tới. Explicit is better than implicit?
+Đoạn code ban đầu hoàn hảo, được thiết kế chủ ý dùng dataclass vì có thể in ra mọi thông tin, thì sau 1 thay đổi "nhỏ" và thường là do 1 người khác thay đổi, trở thành code có lỗ hổng bảo mật (security vulnerability).
+Người ta thường so sánh ngành lập trình với ngành xây dựng, software thì toàn bug còn nhà thì mấy khi "hỏng"? software bị thay đổi hàng ngày, còn nhà thì vài năm hay thập kỷ mới thay.
 
 ### Tạo 1 class mới chứa dataclass này
 Tạo 1 team class dùng dataclass, và in ra:
@@ -140,7 +141,7 @@ Xem list các method được dataclass autogenerate tại <https://peps.python.
 
 ### Kết luận
 `dataclasses` tiện lợi, giúp viết ít code hơn, nhưng cần biết những gì nó "tự động" để tránh bất ngờ.
-Default không có nghĩa là không biết.
+Default không có nghĩa là không biết. Explicit is better than implicit.
 
 Hết.
 
