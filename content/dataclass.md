@@ -134,6 +134,22 @@ print(u, repr(u))
 # <__main__.User object at 0x7f9efd510410> <__main__.User object at 0x7f9efd510410>
 ```
 
+Update: dataclasses cũng đã tính đến chuyện này, để KHÔNG hiện một attribute khi `__repr__`, dùng `field(repr=False)`
+
+```py
+from dataclasses import dataclass, field
+
+@dataclass
+class User:
+    name: str
+    age: int
+    email: str
+    password: str = field(repr=False)
+u = User("Pymier", 8, "hvn@pymi.vn", "hunter42")
+print(u)
+# User(name='Pymier', age=8, email='hvn@pymi.vn')
+```
+
 ### Tham khảo
 <https://docs.python.org/3.11/library/dataclasses.html>
 
