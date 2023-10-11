@@ -1,11 +1,11 @@
-title: MIME trên MacOS không như MIME trên Linux
+title: mime trên MacOS không như mime trên Ubuntu
 date: 2023-10-11
 modified: 2023-10-11
 tags: python, mime, macos, linux, mimetype
 category: news
 slug: mime
 authors: Pymier0
-description: code chạy trên MacOS mà không chạy trên Linux
+description: code chạy trên MacOS mà không chạy trên Ubuntu docker
 
 Viết code chạy trên được nhiều hệ điều hành gọi là "cross-platform", là lý do mà
 lập trình viên sẽ dùng các thư viện thay vì "hard-code".
