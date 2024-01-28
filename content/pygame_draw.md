@@ -25,7 +25,7 @@ Bộ màu lấy từ <https://colorhunt.co> thay vì dùng logo của Windows đ
 
 ### Code
 
-[A flag]({static}/images/pygame_flag.png)
+![A flag]({static}/images/pygame_flag.png)
 
 ```py
 import pygame
