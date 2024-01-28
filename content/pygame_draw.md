@@ -17,7 +17,7 @@ pip install pygame
 
 ### Khái niệm main loop, surface, blit, framerate
 
-- Surface: Mỗi "hiển thị" trên cửa sổ pygame gọi là Surface. Vẽ surface theo tọa độ (x,y)  với góc trên bên phải là (0, 0).
+- Surface: Mỗi "hiển thị" trên cửa sổ pygame gọi là Surface. Vẽ surface theo tọa độ (x,y)  với góc trên bên trái là (0, 0).
 - Framerate: Clock tick 60 gọi là framerate, ở đây sẽ hiển thị 60 hình mỗi giây.
 - blit: draw one image onto another
 
@@ -25,7 +25,7 @@ Bộ màu lấy từ <https://colorhunt.co> thay vì dùng logo của Windows đ
 
 ### Code
 
-[A flag](({static}/images/pygame_flag.png)
+[A flag]({static}/images/pygame_flag.png)
 
 ```py
 import pygame
