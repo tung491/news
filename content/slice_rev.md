@@ -26,8 +26,8 @@ STEP là bước dịch chuyển của index, để chọn index tiếp theo.
 
 Ở ví dụ trên lấy các phần tử có index 0, 0+2 = 2, 2+2 = 4, 4+2 = 6.
 
-- START khi không ghi cụ thể giá trị trước dấu : có giá trị mặc định là 0
-- STOP mặc định là `len(slice)`, tức 8, kết quả 2 biểu thức sau tương đương
+- START khi không ghi cụ thể giá trị trước dấu : có giá trị mặc định là 0.
+- STOP mặc định là `len(slice)`, tức 8.
 - STEP nếu không ghi, mặc định là `1`.
 
 Một tính năng thú vị của slice khiến nhiều người phỏng vấn tỏ ra khó chịu khi hỏi: hãy đảo ngược 1 list/str và câu trả lời là `names[::-1]`.
@@ -64,7 +64,7 @@ handling of normal slices.
 7 -1 -1
 ```
 
-Câu trả lời là khi step = -1 thì start index là `len(names)-1`, stop index là `-1`. Cả 2 phương án nêu từ đầu đều sai.
+**Câu trả lời là khi step = -1 thì start index là `len(names)-1`, stop index là `-1`**. Cả 2 phương án nêu từ đầu đều sai.
 
 ### Tìm lời giải slice với step -1 bằng cách đọc code CPython
 
@@ -161,7 +161,8 @@ _PySlice_GetLongIndices(PySliceObject *self, PyObject *length,
 ```
 
 đoạn code này thực hiện tính toán khi step < 0, start = upper = length + lower và stop = lower = -1.
-Code CPython khá phức tạp, việc in ra start, stop khi thực hiện slice[::-1] để lại như bài tập cho bạn đọc.
+
+Code CPython khá phức tạp, **việc in ra start, stop khi thực hiện slice[::-1] để lại như bài tập cho bạn đọc.**
 
 Vậy code nào đơn giản hơn? Python có rất nhiều bản khác nhau và đơn giản nhất có thể kể tới MicroPython.
 
@@ -177,9 +178,6 @@ remote: Counting objects: 100% (5784/5784), done.
 $ du -csh micropython
 55M	micropython
 55M	total
-$ du -csh cpython
-466M	cpython
-466M	total
 ```
 
 Mở file `py/objslice.c` tìm function `slice_indices` và thêm dòng printf để in start, stop, step:
@@ -280,3 +278,5 @@ Hay code Python
 
 ### Kết luận
 slice với step=-1 có diễn biến bất thường. Nếu cần tìm xuống bên dưới thì đọc code CPython, nhỡ mà khó quá, thì qua MicroPython.
+
+PS: nhớ làm bài tập với CPython.
